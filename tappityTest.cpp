@@ -13,5 +13,3 @@ class tappityTest : public ::testing::Test
 		virtual void SetUp(){}
 		virtual void TearDown(){}
 };
-
-

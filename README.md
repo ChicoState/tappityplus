@@ -28,7 +28,7 @@ ___
         
 ___
 
-`unsigned int length_difference()`
+`int length_difference()`
 
 *Compares the length of the reference to that of the input and returns the absolute value of the difference, or 0 if they are the same length*
         

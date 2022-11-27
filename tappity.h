@@ -20,7 +20,7 @@ class tappity
         //Compares the length of the reference to that of the input and
         //returns the absolute value of the difference, or 0 if they are the
         //same length
-        unsigned int length_difference();
+        int length_difference();
 
         //Compares the content of the reference to that of the input and
         //calculates the accuracy of matching characters. If the two strings

@@ -17,7 +17,7 @@ void tappity::entry(std::string input)
 //Compares the length of the reference to that of the input and
 //returns the absolute value of the difference, or 0 if they are the
 //same length
-unsigned int tappity::length_difference()
+int tappity::length_difference()
 {
   return 0;
 }
