@@ -26,6 +26,7 @@ jobs:
       - name: Build project
         run: |
           make clean
+          ls ~/googletest/googletest
           make
   test:
     needs: [install]
