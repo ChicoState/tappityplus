@@ -26,13 +26,14 @@ jobs:
       - name: Build project
         run: |
           make clean
-          ls ~/googletest/googletest
           make
   test:
     needs: [install]
     runs-on: ubuntu-latest
     steps:
       - name: Test runner
-        run: ./tappityTest
+        run: |
+          ls
+          ./tappityTest
       - name: Coverage analysis
         run: gcov -b tappity.cpp
