@@ -1,4 +1,4 @@
-name: testing
+name: Tests
 
 on:
   push:
@@ -13,22 +13,26 @@ jobs:
           sudo apt-get update && sudo apt-get install -y -f build-essential g++ cmake dos2unix
       - name: Configure GoogleTest
         run: |
-          git clone https://github.com/google/googletest /googletest
-          mkdir /googletest/build
-          cd /googletest/build && cmake .. -DBUILD_GMOCK=OFF
+          git clone https://github.com/google/googletest /usr/src/googletest
+          mkdir /usr/src/googletest/build
+          cd /usr/src/googletest/build && cmake .. -DBUILD_GMOCK=OFF
           make
           cd /usr/src
-      - name: Configure files to unix line feed
-        run: dos2unix test_runner.sh --safe --quiet
   build:
     needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Configure files to unix line feed
+        run: dos2unix test_runner.sh --safe --quiet
       - name: Build project
         run: |
           make clean
           make
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Test runner
         run: ./tappityTest
       - name: Coverage analysis
