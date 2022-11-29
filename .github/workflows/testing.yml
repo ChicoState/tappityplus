@@ -30,4 +30,6 @@ jobs:
       - name: Test runner
         run: ./tappityTest
       - name: Coverage analysis
-        run: gcov -b tappity.cpp
+        run: |
+          gcov -b tappity.cpp
+          cat tappity.cpp.gcov
