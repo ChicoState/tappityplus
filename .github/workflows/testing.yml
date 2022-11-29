@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  install:
+  testing:
     runs-on: ubuntu-latest
     env:
       GTEST_DIR: /home/runner/googletest/googletest
@@ -27,13 +27,7 @@ jobs:
         run: |
           make clean
           make
-  test:
-    needs: [install]
-    runs-on: ubuntu-latest
-    steps:
       - name: Test runner
-        run: |
-          ls
-          ./tappityTest
+        run: ./tappityTest
       - name: Coverage analysis
         run: gcov -b tappity.cpp
