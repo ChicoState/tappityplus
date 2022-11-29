@@ -1,3 +1,5 @@
+[![Tests](https://github.com/ChicoState/tappityplus/actions/workflows/testing.yml/badge.svg)](https://github.com/ChicoState/tappityplus/actions/workflows/testing.yml) Testing status for ChicoState/tappityplus
+
 # Getting Started
 
 Build the Unit Testing CPP ("gtest") container if you have not already:
@@ -12,7 +14,6 @@ Or to interactively work within the container's shell:
 
 `docker run --mount type=bind,source="$(pwd)",target=/usr/src -it gtest sh`
 
-This should automatically re-build the project and run the tests
 
 # TappityPlus
 
